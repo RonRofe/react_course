@@ -15,6 +15,26 @@ class App extends Component {
     otherState: 'some other value',
     showPersons: false,
   }
+  
+  constructor(props) {
+    super(props);
+    
+    console.log('[App.js] constructor');
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps', props);
+
+    return state;
+  }
+
+  componentDidMount() {
+    console.log('[App.js] componentDidMount');
+  }
+
+  componentWillMount() {
+    console.log('[App.js] componentWillMount');
+  }
 
   nameChangeHandler = (event, id) => {
     const persons = [...this.state.persons];
@@ -40,6 +60,8 @@ class App extends Component {
   };
 
   render() {
+    console.log('[App.js] render');
+
     let persons = null;
 
     if (this.state.showPersons) {
