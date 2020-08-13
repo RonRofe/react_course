@@ -14,11 +14,12 @@ class App extends Component {
     ],
     otherState: 'some other value',
     showPersons: false,
+    showCockpit: true,
   }
-  
+
   constructor(props) {
     super(props);
-    
+
     console.log('[App.js] constructor');
   }
 
@@ -30,14 +31,14 @@ class App extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log('[App.js] shouldComponentUpdate');
-    
+
     return true;
   }
 
   componentDidMount() {
     console.log('[App.js] componentDidMount');
   }
-  
+
   componentDidUpdate() {
     console.log('[App.js] componentDidUpdate');
 
@@ -86,11 +87,16 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
-        <Cockpit
-          title={this.props.appTitle}
-          showPersons={this.state.showPersons}
-          persons={this.state.persons}
-          clicked={this.togglePersonsHandler}></Cockpit>
+        <button onClick={() => this.setState({ showCockpit: false })}>Remove Cockpit</button>
+        {
+          this.state.showCockpit ?
+            <Cockpit
+              title={this.props.appTitle}
+              showPersons={this.state.showPersons}
+              persons={this.state.persons}
+              clicked={this.togglePersonsHandler}></Cockpit> :
+            null
+        }
         {persons}
       </div>
     );
