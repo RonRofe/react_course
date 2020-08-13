@@ -32,9 +32,9 @@ class App extends Component {
     console.log('[App.js] componentDidMount');
   }
 
-  componentWillMount() {
-    console.log('[App.js] componentWillMount');
-  }
+  // componentWillMount() {
+  //   console.log('[App.js] componentWillMount');
+  // }
 
   nameChangeHandler = (event, id) => {
     const persons = [...this.state.persons];
