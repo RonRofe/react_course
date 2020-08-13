@@ -5,16 +5,16 @@ import './App.css';
 import Person from './Person/Person';
 
 const StyledButton = styled.button`
-  background-color: ${props => props.showP ? 'red': 'green'},
-  color: white,
-  font: inherit,
-  border: 1px solid blue,
-  padding: 8px,
-  cursor: pointer,
+  background-color: ${props => props.showP ? 'red': 'green'};
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
 
-  &:hover: {
-    background-color: ${props => props.showP ? 'salmon': 'lightgreen'},
-    color: black,
+  &:hover {
+    background-color: ${props => props.showP ? 'salmon': 'lightgreen'};
+    color: black;
   }
 `;
 
