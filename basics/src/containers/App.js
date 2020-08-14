@@ -5,6 +5,7 @@ import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 import withClass from '../hoc/withClass';
+import Aux from '../hoc/Auxiliary';
 
 class App extends Component {
   state = {
@@ -93,7 +94,7 @@ class App extends Component {
     }
 
     return (
-      <Fragment classes={classes.App}>
+      <Aux classes={classes.App}>
         <button onClick={() => this.setState({ showCockpit: false })}>Remove Cockpit</button>
         {
           this.state.showCockpit ?
@@ -105,7 +106,7 @@ class App extends Component {
             null
         }
         {persons}
-      </Fragment  >
+      </Aux>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
