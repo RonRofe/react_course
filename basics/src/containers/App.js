@@ -16,6 +16,7 @@ class App extends Component {
     otherState: 'some other value',
     showPersons: false,
     showCockpit: true,
+    changeCounter: 0,
   }
 
   constructor(props) {
@@ -56,7 +57,12 @@ class App extends Component {
 
     person.name = event.target.value;
     persons[personIndex] = person;
-    this.setState({ persons });
+    this.setState((prevState, props) => {
+      return {
+        persons,
+        changeCounter: prevState.changeCounter + 1,
+      };
+    });
   };
 
   deletePersonHandler = (index) => {
