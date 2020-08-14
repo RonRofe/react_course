@@ -23,6 +23,7 @@ class Person extends Component {
         return (
             // <div className={classes.Person}>
             <Fragment>
+                { this.props.isAuth ? <p>Authenticated!</p> : <p>Please log in</p> }
                 <p onClick={this.props.click}>Im a {this.props.name} and I am {this.props.age} years old!</p>
                 <p>{this.props.children}</p>
                 <input
