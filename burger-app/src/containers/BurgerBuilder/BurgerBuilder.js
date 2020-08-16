@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
 import Aux from '../../hoc/Auxiliry';
+import Modal from '../../components/UI/Modal/Modal';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
+import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 
 const PRICES = {
     salad: 0.5,
@@ -60,11 +62,11 @@ class BurgerBuilder extends Component {
         this.updatePurchaseState(updatedIngredients);
     };
 
-    updatePurchaseState (ingredients) {
+    updatePurchaseState(ingredients) {
         const sum = Object.keys(ingredients)
             .map((key) => ingredients[key])
             .reduce((sum, el) => sum + el, 0);
-        
+
         this.setState({ purchaseable: sum > 0 });
     }
 
@@ -77,6 +79,9 @@ class BurgerBuilder extends Component {
 
         return (
             <Aux>
+                <Modal>
+                    <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
+                </Modal>
                 <Burger ingredients={this.state.ingredients}></Burger>
                 <BuildControls
                     price={this.state.totalPrice}
