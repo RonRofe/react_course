@@ -14,7 +14,7 @@ class Blog extends Component {
                 <header>
                     <nav>
                         <ul>
-                            <li><NavLink activeClassName="active" to="/" exact>Home</NavLink></li>
+                            <li><NavLink activeClassName="not-wroking-active" activeStyle={{ color: '#FA923F', textDecoration: 'underline' }} to="/" exact>Home</NavLink></li>
                             <li>
                                 <NavLink
                                     to={{
