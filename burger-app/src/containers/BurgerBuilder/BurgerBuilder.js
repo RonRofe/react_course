@@ -117,7 +117,9 @@ class BurgerBuilder extends Component {
         let $burger = 
         !this.state.error ? (
             <Spinner></Spinner>
-        ) : <p>Ingredients can not be loaded</p>;
+        ) : (
+            <p>Ingredients can not be loaded</p>
+        );
 
         if (!!this.state.ingredients) {
             $burger = (
