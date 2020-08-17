@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 // import axios from 'axios';
 
 import Posts from './Posts/Posts';
@@ -17,7 +18,7 @@ class Blog extends Component {
                         </ul>
                     </nav>
                 </header>
-                <Posts></Posts>
+                <Route path="/" exact component={Posts} ></Route>
             </div>
         );
     }
