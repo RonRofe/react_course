@@ -20,7 +20,7 @@ class FullPost extends Component {
         if (!!this.props.match.params.id) {
             if (
                 !this.state.loadedPost ||
-                (this.state.loadedPost && this.state.loadedPost.id != this.props.match.params.id)
+                (this.state.loadedPost && this.state.loadedPost.id !== +this.props.match.params.id)
             ) {
                 axious.get('/posts/' + this.props.match.params.id)
                     .then(({ data }) => this.setState({ loadedPost: data }));
