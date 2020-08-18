@@ -86,6 +86,9 @@ class ContactData extends Component {
                     ]
                 },
                 value: '',
+                validation: {},
+                valid: true,
+                touched: false,
             },
         },
         formIsValid: false,
@@ -148,7 +151,7 @@ class ContactData extends Component {
         let formIsValid = true;
 
         for (const field in updatedOrderForm) {
-            if (typeof updatedOrderForm[field].valid === 'boolean' && !updatedOrderForm[field].valid) {
+            if (!updatedOrderForm[field].valid) {
                 formIsValid = false;
                 break;
             }
