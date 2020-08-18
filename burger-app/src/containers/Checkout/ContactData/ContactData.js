@@ -160,7 +160,9 @@ class ContactData extends Component {
                     elementType={field.config.elementType}
                     elementConfig={field.config.elementConfig}
                     value={field.config.value}
-                    change={(event) => this.inputChangeHandler(event, field.id)}></Input>
+                    change={(event) => this.inputChangeHandler(event, field.id)}
+                    invalid={!field.config.valid}
+                    shouldValidate={!!field.config.validation}></Input>
             );
         });
 
