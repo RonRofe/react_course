@@ -21,6 +21,7 @@ class ContactData extends Component {
                 },
                 value: '',
                 valid: false,
+                touched: false,
             },
             street: {
                 elementType: 'input',
@@ -33,6 +34,7 @@ class ContactData extends Component {
                 },
                 value: '',
                 valid: false,
+                touched: false,
             },
             zipCode: {
                 elementType: 'input',
@@ -47,6 +49,7 @@ class ContactData extends Component {
                 },
                 value: '',
                 valid: false,
+                touched: false,
             },
             country: {
                 elementType: 'input',
@@ -59,6 +62,7 @@ class ContactData extends Component {
                 },
                 value: '',
                 valid: false,
+                touched: false,
             },
             email: {
                 elementType: 'email',
@@ -71,6 +75,7 @@ class ContactData extends Component {
                 },
                 value: '',
                 valid: false,
+                touched: false,
             },
             deliveryMethod: {
                 elementType: 'select',
@@ -133,6 +138,7 @@ class ContactData extends Component {
         const updatedOrderForm = JSON.parse(JSON.stringify(this.state.orderForm));
 
         updatedOrderForm[inputIdentifier].value = event.target.value;
+        updatedOrderForm[inputIdentifier].touched = true;
         updatedOrderForm[inputIdentifier].valid = this.checkValidity(
             updatedOrderForm[inputIdentifier].value,
             updatedOrderForm[inputIdentifier].validation,
@@ -162,7 +168,8 @@ class ContactData extends Component {
                     value={field.config.value}
                     change={(event) => this.inputChangeHandler(event, field.id)}
                     invalid={!field.config.valid}
-                    shouldValidate={!!field.config.validation}></Input>
+                    shouldValidate={!!field.config.validation}
+                    touched={field.config.touched}></Input>
             );
         });
 
