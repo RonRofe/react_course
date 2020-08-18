@@ -55,7 +55,7 @@ class ContactData extends Component {
                 elementConfig: {
                     options: [
                         { value: 'fastest', displayValue: 'Fastest' },
-                        { value: 'cheapest', displayValue: 'cheapest' },
+                        { value: 'cheapest', displayValue: 'Cheapest' },
                     ]
                 },
                 value: '',
@@ -95,7 +95,7 @@ class ContactData extends Component {
             return (
                 <Input
                     key={field.id}
-                    elementType={field.config.elemntType}
+                    elementType={field.config.elementType}
                     elementConfig={field.config.elementConfig}
                     value={field.config.value}></Input>
             );
