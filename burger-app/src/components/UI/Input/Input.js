@@ -5,20 +5,29 @@ import classes from './Input.module.css';
 const input = (props) => {
     let $inputEl = null;
 
-    switch (props.inputtype) {
+    switch (props.elemntType) {
         case 'input':
             $inputEl = (
-                <input className={classes.InputElement} {...props}></input>
+                <input 
+                    className={classes.InputElement}
+                    {...props.elementConfig}
+                    value={props.value}></input>
             );
             break;
         case 'textarea':
             $inputEl = (
-                <textarea className={classes.InputElement} {...props}></textarea>
+                <textarea
+                    className={classes.InputElement}
+                    {...props.elementConfig}
+                    value={props.value}></textarea>
             );
             break;
         default:
             $inputEl = (
-                <input className={classes.InputElement} {...props}></input>
+                <input
+                    className={classes.InputElement}
+                    {...props.elementConfig}
+                    value={props.value}></input>
             );
     }
 
