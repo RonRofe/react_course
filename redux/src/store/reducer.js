@@ -9,6 +9,21 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 counter: state.counter + 1,
             };
+        case 'DECREMENT':
+            return {
+                ...state,
+                counter: state.counter - 1,
+            };
+        case 'ADD':
+            return {
+                ...state,
+                counter: state.counter + action.payload.value,
+            };
+        case 'SUBSTRACT':
+            return {
+                ...state,
+                counter: state.counter - action.payload.value,
+            };
         default:
             return state;
     }
