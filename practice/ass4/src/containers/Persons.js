@@ -12,10 +12,8 @@ class Persons extends Component {
             <div>
                 <AddPerson
                     personAdded={
-                        () => this.props.addPerson({
-                            id: Math.random(), // not really unique but good enough here!
-                            name: 'Max',
-                            age: Math.floor(Math.random() * 40)
+                        (name, age) => this.props.addPerson({
+                            id: Math.random(), name, age,
                         })
                     } />
                 {
